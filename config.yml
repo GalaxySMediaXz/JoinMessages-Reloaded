@@ -1,0 +1,4 @@
+MOTD:
+    - '&b&lHi, &a%player%' # & use to replace §
+    - '&bHow are you to day?' # %player% use to replace with player name
+    - '&aLet''s fun together!' #You can add more!
