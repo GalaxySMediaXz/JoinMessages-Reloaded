@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package me.galaxysmediaxz.jmreloaded;
 
 import java.util.EventListener;
@@ -23,13 +19,16 @@ public class JoinEvent implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         Player p = e.getPlayer();
+        if(plugin.getConfig().getBoolean("Settings.Custom-Join-Message", true)){
+           e.setJoinMessage(plugin.getConfig().getString("Messages.Join-Message").replace("&", "§").replace("%player%", p.getName()));
+        }
         if (plugin.getConfig().getBoolean("Settings.ClearChat-On-Join", true)){
             for (int i = 0; i <100; i++){
             p.sendMessage("  ");   
         }
         }        
         if (plugin.getConfig().getBoolean("Settings.Motd-On-Join", true)){
-            List<String> Lines = plugin.getConfig().getStringList("MOTD");
+            List<String> Lines = plugin.getConfig().getStringList("Messages.MOTD");
         for (String s : Lines) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&' , s).replace("%player%", p.getName()));
         }
