@@ -23,12 +23,19 @@ public class JoinEvent implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         Player p = e.getPlayer();
-        for (int i = 0; i <100; i++){
-            p.sendMessage("  ");
+        if (plugin.getConfig().getBoolean("Settings.ClearChat-On-Join", true)){
+            for (int i = 0; i <100; i++){
+            p.sendMessage("  ");   
         }
-        List<String> Lines = plugin.getConfig().getStringList("MOTD");
+        }        
+        if (plugin.getConfig().getBoolean("Settings.Motd-On-Join", true)){
+            List<String> Lines = plugin.getConfig().getStringList("MOTD");
         for (String s : Lines) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&' , s).replace("%player%", p.getName()));
+        }
+        return;
+    }else{
+            return;
         }
     }
     
