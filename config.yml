@@ -1,3 +1,13 @@
+### JoinMessages           ###
+### Version 0.6            ###
+### Author: GalaxySMediaXz ###
+
+Enable: true #Use it to swtich off/on this plugin if it error and you can't shutdown the server 
+    
+Settings:
+    Motd-On-Join: true
+    ClearChat-On-Join: true
+    Check-For-Update: true
 MOTD:
     - '&b&lHi, &a%player%' # & use to replace §
     - '&bHow are you to day?' # %player% use to replace with player name
