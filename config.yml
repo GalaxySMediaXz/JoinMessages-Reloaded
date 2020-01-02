@@ -1,14 +1,19 @@
 ### JoinMessages           ###
-### Version 0.6            ###
+### Version 0.7            ###
 ### Author: GalaxySMediaXz ###
 
 Enable: true #Use it to swtich off/on this plugin if it error and you can't shutdown the server 
     
 Settings:
+    Custom-Join-Message: true
     Motd-On-Join: true
     ClearChat-On-Join: true
     Check-For-Update: true
-MOTD:
-    - '&b&lHi, &a%player%' # & use to replace §
-    - '&bHow are you to day?' # %player% use to replace with player name
-    - '&aLet''s fun together!' #You can add more!
+    Custom-Quit-Message: true
+Messages:
+    Join-Message: '&8&l[&a&l+&8&l] &b%player% &ajoin the game'
+    Quit-Message: '&8&l[&c&l-&8&l] &b%player% &cleft the game'
+    MOTD:
+        - '&b&lHi, &a%player%' # & use to replace §
+        - '&bHow are you to day?' # %player% use to replace player name
+        - '&aLet''s fun together!' #You can add more!
